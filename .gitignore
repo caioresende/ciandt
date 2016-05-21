@@ -1,0 +1,30 @@
+#PACKAGES#
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+#LOGS AND DATABASE#
+*.log
+*.sqlite
+*.sql
+
+#OS GENERATED FILES#
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ethumbs.db
+Thumbs.db
+
+#BUILD SYSTEMS#
+node_modules/
+bower_components/
+build/
+dist/
+*.css.map
