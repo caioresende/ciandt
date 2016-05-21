@@ -27,4 +27,5 @@ node_modules/
 bower_components/
 build/
 dist/
+.idea/
 *.css.map
