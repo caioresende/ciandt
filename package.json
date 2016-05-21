@@ -1,0 +1,22 @@
+{
+  "name": "ciandt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caioresende/ciandt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caioresende/ciandt/issues"
+  },
+  "homepage": "https://github.com/caioresende/ciandt#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}

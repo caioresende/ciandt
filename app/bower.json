@@ -1,0 +1,21 @@
+{
+  "name": "ciandt",
+  "homepage": "https://github.com/caioresende/ciandt",
+  "authors": [
+    "Caio  Resende <kaio0500@hotmail.com>"
+  ],
+  "description": "Final project done from a mockup offered by CI&T staff",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.5",
+    "angular-material": "^1.0.9"
+  }
+}
