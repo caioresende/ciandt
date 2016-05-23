@@ -1,24 +1,47 @@
 <form
-        name="vm.secondStepForm">
-    <div>
-        <p>Quick question to the <strong>never-ending</strong> story, {{vm.form.name}}:</p>
-        <md-radio-group ng-model="vm.form.bolachaOrBiscoito" layout="row" layout-align="start center" class="md-primary">
-            <md-radio-button ng-value="'BISCOITO'" ng-class="{'selected-text': vm.form.bolachaOrBiscoito == 'BISCOITO'}">#teamBiscoito</md-radio-button>
-            <md-radio-button ng-value="'BOLACHA'" ng-class="{'selected-text': vm.form.bolachaOrBiscoito == 'BOLACHA'}">#teamBolacha</md-radio-button>
-        </md-radio-group>
+        name="vm.thirdStepForm">
+    <div class="md-padding">
+        <div layout="row" layout-align="center start">
+            <div class="vertical-divider padding-right margin-right" flex="50">
+                <p>Your favorite <strong>Star Wars</strong> movie is:</p>
+                <div flex="50">
+                    <img  src="img/{{vm.form.favoriteStarWarsMovie.poster}}" />
+                </div>
+                <p flex class="md-title">{{vm.form.favoriteStarWarsMovie.name}}</p>
+            </div>
+            <div flex="50">
+                <p>You're current <strong>watching on TV</strong>:</p>
+                <md-chips ng-model="vm.form.currentWatchingOnTv" readonly="true">
+                    <md-chip-template>
+                        {{$chip}}
+                    </md-chip-template>
+                </md-chips>
+                <p ng-show="vm.form.currentWatchingOnTv.length == 0" class="md-body-1">You're not a fan of tv, I may say...</p>
+            </div>
+        </div>
+        <md-divider class="margin-top margin-bottom"></md-divider>
+        <div layout="row" layout-align="center start">
+            <div class="vertical-divider margin-right padding-right" flex="50">
+                <p>You chose to be:</p>
+                <p class="md-display-1" ng-show="vm.form.bolachaOrBiscoito == 'BISCOITO'">#TeamBiscoito</p>
+                <p class="md-display-1" ng-show="vm.form.bolachaOrBiscoito == 'BOLACHA'">#TeamBolacha</p>
+            </div>
+            <div flex="50">
+                <p>Your <strong>favorite</strong> foods:</p>
+                <md-chips ng-model="vm.form.favoriteFoods" readonly="true">
+                    <md-chip-template>
+                        {{$chip}}
+                    </md-chip-template>
+                </md-chips>
+            </div>
+        </div>
+
     </div>
-    <div layout="column" layout-align="start start">
-        <p>What are your <strong>favorite foods</strong>:</p>
-        <md-checkbox ng-class="{'selected-text': vm.exists(food, vm.form.favoriteFoods)}" class="md-primary" ng-repeat="food in vm.foods | orderBy: 'name'" ng-checked="vm.exists(food, vm.form.favoriteFoods)" ng-click="vm.toggle(food, vm.form.favoriteFoods)">
-            <md-icon md-svg-src="img/icons/{{food.icon}}"></md-icon>
-            <span class="md-body-1">{{food.name}}</span>
-        </md-checkbox>
-        <md-checkbox ng-class="{'selected-text': vm.isChecked()}" class="md-primary" ng-checked="vm.isChecked()" md-indeterminate="vm.isIndeterminate()" ng-click="vm.toggleAll()">If it's <strong>food</strong>, I eat!</md-checkbox>
-    </div>
+
     <md-divider></md-divider>
     <div class="md-padding" layout="row" layout-align="start center">
-        <md-button class="md-accent" ng-disabled="vm.currentStep == '1'" ng-click="vm.previousStep()">Back</md-button>
+        <md-button class="md-primary" ng-disabled="vm.currentStep == '0'" ng-click="vm.previousStep()">Back</md-button>
         <span flex></span>
-        <md-button class="md-raised md-accent" ng-click="vm.nextStep()" ng-disabled="vm.secondStepForm.$invalid">Next</md-button>
+        <md-button class="md-raised md-primary" ng-click="vm.nextStep()">Save</md-button>
     </div>
 </form>

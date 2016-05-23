@@ -1,0 +1,67 @@
+.light-gray-bg {background: rgba(0,0,0,0.02)}
+
+.large-icon {
+    width: 150px;
+    height: auto;
+}
+
+.step-circle {
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    border: solid 1px rgba(0,0,0,0.1);
+    line-height: 50px;
+    text-align: center;
+}
+
+.step-passed {
+    background-color: #009688;
+    border: solid 1px rgba(0,0,0,0.4);
+    color: #ffffff;
+}
+
+.divider {
+    border-top: solid 1px rgba(0,0,0,0.1);
+    margin-top: 24px;
+}
+
+.divider-passed {
+    border-top: solid 1px rgba(0,0,0,0.4);
+}
+
+.selected-img {
+    border: solid 4px #009688;
+}
+.selected-text {
+    color: #009688;
+    font-weight:700;
+}
+
+/* MARGIN / PADDING */
+.padding-left {  padding-left: 16px; }
+.padding-right {  padding-right: 16px; }
+.padding-bottom {  padding-bottom: 16px;  }
+.padding-top {  padding-top: 16px;  }
+.margin-top {  margin-top: 16px;  }
+.margin-bottom {  margin-bottom: 16px;  }
+.margin-right {  margin-right: 16px;  }
+.margin-left {  margin-left: 16px;  }
+.no-margin { margin: 0 !important}
+.no-margin-bottom { margin-bottom: 0 !important}
+.no-padding { padding: 0 !important}
+.margin-horizontal { margin: 0 16px }
+.padding-horizontal { padding: 0 16px }
+.small-padding { padding: 4px }
+.margin-space-right { margin-right: 4px }
+.margin-space-left { margin-left: 4px }
+.small-padding-vertical { padding-top: 4px; padding-bottom: 4px }
+
+
+.vertical-divider {
+    border-right: solid 1px rgba(0,0,0,0.12)
+}
+.vertical-divider-left {
+    border-left: solid 1px rgba(0,0,0,0.12)
+}

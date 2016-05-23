@@ -1,0 +1,46 @@
+<form
+    name="vm.welcomeForm">
+    <div class="md-padding" layout="column" layout-align="center center">
+        <div layout="row" layout-align="start center">
+            <h1 class="md-display-3" flex>Let's get<br>to <strong>know</strong><br>each other!</h1>
+        </div>
+        <div layout="row">
+            <md-input-container>
+                <label>Your first name is</label>
+                <input
+                        name="name"
+                        type="text"
+                        ng-model="vm.form.name"
+                        minlength="2"
+                        ng-pattern="/^(\D)+$/"
+                        required>
+                <div ng-if="vm.welcomeForm.$submitted || vm.welcomeForm.name.$touched" ng-messages="vm.welcomeForm.name.$error" multiple md-auto-hide="false">
+                    <div ng-message="required">Don't you blank me here, <strong>please</strong>! :)</div>
+                    <div ng-message="minlength">Hey, shorty... at least a <strong>"Zé"</strong></div>
+                    <div ng-message="pattern">Only letters mate, guess you <strong>aren't</strong> BB-08.</div>
+                </div>
+            </md-input-container>
+            <md-input-container>
+                <label>Best quote ever:</label>
+                <input
+                        name="quote"
+                        type="text"
+                        ng-model="vm.form.bestQuoteEver"
+                        md-maxlength="150"
+                        required
+                        minlength="10">
+                <div ng-if="vm.welcomeForm.$submitted || vm.welcomeForm.quote.$touched" ng-messages="vm.welcomeForm.quote.$error">
+                    <div ng-message="required">Hint: Roses are red...</div>
+                    <div ng-message="minlength">Not that inspiring today?! <strong>Try harder</strong>... :)</div>
+                </div>
+            </md-input-container>
+        </div>
+
+    </div>
+    <md-divider></md-divider>
+    <div class="md-padding" layout="row" layout-align="start center">
+        <md-button class="md-primary" ng-disabled="vm.currentStep == '0'">Back</md-button>
+        <span flex></span>
+        <md-button class="md-raised md-primary" ng-click="vm.nextStep()" ng-disabled="vm.welcomeForm.$invalid">Next</md-button>
+    </div>
+    </form>

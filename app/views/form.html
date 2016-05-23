@@ -1,0 +1,29 @@
+<md-content layout="row" layout-align="center start" flex="100" class="light-gray-bg">
+    <md-card flex="50">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>{{vm.title}}</span>
+                </h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="vm.restartForm()">
+                    <md-icon md-svg-src="img/icons/trash.svg"></md-icon>
+                    <md-tooltip>Restart</md-tooltip>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <div ng-show="!vm.done">
+            <div class="md-padding" layout="row">
+                <div class="step-circle" ng-class="{'step-passed': vm.currentStep >= 0}">•</div>
+                <div class="divider" ng-class="{'divider-passed': vm.currentStep > 0}" flex></div>
+                <div class="step-circle" ng-class="{'step-passed': vm.currentStep >= 1}">1</div>
+                <div class="divider" ng-class="{'divider-passed': vm.currentStep > 1}" flex></div>
+                <div class="step-circle" ng-class="{'step-passed': vm.currentStep >= 2}">2</div>
+                <div class="divider" ng-class="{'divider-passed': vm.currentStep > 2}" flex></div>
+                <div class="step-circle" ng-class="{'step-passed': vm.currentStep >=     3}">3</div>
+            </div>
+            <md-progress-linear md-mode="determinate" value="{{vm.value}}"></md-progress-linear>
+        </div>
+        <md-content ui-view="content" layout="column"></md-content>
+    </md-card>
+</md-content>
