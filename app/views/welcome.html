@@ -32,6 +32,7 @@
                 <div ng-if="vm.welcomeForm.$submitted || vm.welcomeForm.quote.$touched" ng-messages="vm.welcomeForm.quote.$error">
                     <div ng-message="required">Hint: Roses are red...</div>
                     <div ng-message="minlength">Not that inspiring today?! <strong>Try harder</strong>... :)</div>
+                    <div ng-message="md-maxlength">Can you do a <strong>tweet version</strong> of that?</div>
                 </div>
             </md-input-container>
         </div>
