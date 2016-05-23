@@ -1,5 +1,10 @@
 var gulp = require('gulp'),
-    connect = require('gulp-connect');
+    connect = require('gulp-connect'),
+    bower = require('gulp-bower');
+
+gulp.task('bower', function() {
+    return bower();
+});
 
 gulp.task('webserver', function() {
     connect.server({
@@ -7,4 +12,4 @@ gulp.task('webserver', function() {
     });
 });
 
-gulp.task('default', ['webserver']);
+gulp.task('default', ['bower', 'webserver']);
