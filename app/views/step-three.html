@@ -1,0 +1,24 @@
+<form
+        name="vm.secondStepForm">
+    <div>
+        <p>Quick question to the <strong>never-ending</strong> story, {{vm.form.name}}:</p>
+        <md-radio-group ng-model="vm.form.bolachaOrBiscoito" layout="row" layout-align="start center" class="md-primary">
+            <md-radio-button ng-value="'BISCOITO'" ng-class="{'selected-text': vm.form.bolachaOrBiscoito == 'BISCOITO'}">#teamBiscoito</md-radio-button>
+            <md-radio-button ng-value="'BOLACHA'" ng-class="{'selected-text': vm.form.bolachaOrBiscoito == 'BOLACHA'}">#teamBolacha</md-radio-button>
+        </md-radio-group>
+    </div>
+    <div layout="column" layout-align="start start">
+        <p>What are your <strong>favorite foods</strong>:</p>
+        <md-checkbox ng-class="{'selected-text': vm.exists(food, vm.form.favoriteFoods)}" class="md-primary" ng-repeat="food in vm.foods | orderBy: 'name'" ng-checked="vm.exists(food, vm.form.favoriteFoods)" ng-click="vm.toggle(food, vm.form.favoriteFoods)">
+            <md-icon md-svg-src="img/icons/{{food.icon}}"></md-icon>
+            <span class="md-body-1">{{food.name}}</span>
+        </md-checkbox>
+        <md-checkbox ng-class="{'selected-text': vm.isChecked()}" class="md-primary" ng-checked="vm.isChecked()" md-indeterminate="vm.isIndeterminate()" ng-click="vm.toggleAll()">If it's <strong>food</strong>, I eat!</md-checkbox>
+    </div>
+    <md-divider></md-divider>
+    <div class="md-padding" layout="row" layout-align="start center">
+        <md-button class="md-accent" ng-disabled="vm.currentStep == '1'" ng-click="vm.previousStep()">Back</md-button>
+        <span flex></span>
+        <md-button class="md-raised md-accent" ng-click="vm.nextStep()" ng-disabled="vm.secondStepForm.$invalid">Next</md-button>
+    </div>
+</form>
