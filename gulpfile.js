@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     bower = require('gulp-bower');
 
 gulp.task('bower', function() {
-    return bower();
+    return  bower({ directory: 'bower_components', cwd: 'app' })
 });
 
 gulp.task('webserver', function() {
