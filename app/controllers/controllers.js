@@ -6,33 +6,35 @@ form.controller('formController', ['$scope', '$state', '$q', '$localStorage', 'f
     vm.tvShows = formService.tvShows;
     vm.foods = formService.foods;
 
-    if ($localStorage.form)
+    var checkForLocalStorageForm = function ()
     {
-        vm.form = $localStorage.form;
-        console.log(vm.form)
-    }
-    else
-    {
-        vm.form = {
-            name: '',
-            currentWatchingOnTv: [],
-            favoriteStarWarsMovie: '',
-            bolachaOrBiscoito: '',
-            bestQuoteEver: '',
-            favoriteFoods: []
-        };
-        $localStorage.form = vm.form
-    }
-
-    vm.title = 'Welcome';
+        if ($localStorage.form)
+        {
+            vm.form = $localStorage.form;
+        }
+        else
+        {
+            vm.form = {
+                name: '',
+                currentWatchingOnTv: [],
+                favoriteStarWarsMovie: '',
+                bolachaOrBiscoito: '',
+                bestQuoteEver: '',
+                favoriteFoods: []
+            };
+            $localStorage.form = vm.form
+        }
+    };
 
     var getStarWarsMovieFromId = function (id)
     {
+        console.log(id)
         for (var i = 0; i < vm.starWarsMovies.length; i++)
         {
             if (vm.starWarsMovies[i].id == id)
             {
                 vm.form.favoriteStarWarsMovie = vm.starWarsMovies[i]
+                console.log(vm.form)
             }
         }
     };
@@ -232,6 +234,7 @@ form.controller('formController', ['$scope', '$state', '$q', '$localStorage', 'f
         }
     };
 
+    checkForLocalStorageForm()
     initializeStep($state.current.data.currentStep)
 
 }]);
