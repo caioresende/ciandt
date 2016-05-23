@@ -1,15 +1,15 @@
 <form
         name="vm.thirdStepForm">
     <div class="md-padding">
-        <div layout="row" layout-align="center start">
-            <div class="vertical-divider padding-right margin-right" flex="50">
+        <div layout-xs="column" layout-sm="column" layout-gt-sm="row" layout-align="center start">
+            <div class="vertical-divider padding-right margin-right" flex="50" flex-xs="100" flex-sm="100">
                 <p>Your favorite <strong>Star Wars</strong> movie is:</p>
-                <div flex="50">
+                <div flex-xs="100" flex-sm="100" flex="50">
                     <img  src="img/{{vm.form.favoriteStarWarsMovie.poster}}" />
                 </div>
                 <p flex class="md-title">{{vm.form.favoriteStarWarsMovie.name}}</p>
             </div>
-            <div flex="50">
+            <div flex="50" flex-xs="100" flex-sm="100">
                 <p>You're current <strong>watching on TV</strong>:</p>
                 <md-chips ng-model="vm.form.currentWatchingOnTv" readonly="true">
                     <md-chip-template>
@@ -20,8 +20,8 @@
             </div>
         </div>
         <md-divider class="margin-top margin-bottom"></md-divider>
-        <div layout="row" layout-align="center start">
-            <div class="vertical-divider margin-right padding-right" flex="50">
+        <div layout-xs="column" layout-sm="column" layout-gt-sm="row" layout="row" layout-align="center start">
+            <div class="vertical-divider margin-right padding-right" flex="50" flex-xs="100" flex-sm="100" >
                 <p>You chose to be:</p>
                 <p class="md-display-1" ng-show="vm.form.bolachaOrBiscoito == 'BISCOITO'">#TeamBiscoito</p>
                 <p class="md-display-1" ng-show="vm.form.bolachaOrBiscoito == 'BOLACHA'">#TeamBolacha</p>

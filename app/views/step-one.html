@@ -3,12 +3,12 @@
     <div class="md-padding">
         <div>
             <p>Your favorite <strong>Star Wars</strong> movie is:</p>
-            <md-radio-group required class="md-primary" ng-model="vm.form.favoriteStarWarsMovie" layout="row" layout-wrap layout-align="center start">
-                <md-radio-button ng-repeat="movie in vm.starWarsMovies" ng-value="movie.id" flex="20">
+            <md-radio-group required class="md-primary" ng-model="vm.form.favoriteStarWarsMovie" layout-gt-xs="row" layout-wrap layout-align="start center">
+                <md-radio-button ng-repeat="movie in vm.starWarsMovies" ng-value="movie.id" flex="25" flex-xs="100" flex-sm="45" flex-md="30" class="padding-right">
                     <img ng-class="{'selected-img': vm.form.favoriteStarWarsMovie == movie.id}" flex="100" src="img/{{movie.poster}}"/>
                     <p class="md-caption" ng-class="{'selected-text': vm.form.favoriteStarWarsMovie == movie.id}">{{movie.name}} <strong>({{movie.year}})</strong></p>
                 </md-radio-button>
-                <md-radio-button ng-value="'TREK'" flex="20">
+                <md-radio-button ng-value="'TREK'" flex="25" flex-xs="100" flex-sm="45" flex-md="30" class="padding-right">
                     <img ng-class="{'selected-img': vm.form.favoriteStarWarsMovie == 'TREK'}"  flex="100" src="img/star_trek_poster_01.jpg"/>
                     <p class="md-caption" ng-class="{'selected-text': !vm.form.favoriteStarWarsMovie == 'TREK'}">Or, <strong>Star Trek</strong><br> all the way!</p>
                 </md-radio-button>
